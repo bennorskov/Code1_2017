@@ -1,0 +1,48 @@
+<html>
+<head>
+	<meta charset="utf-8">
+
+	<style>
+	* {
+		letter-spacing: -12px;
+		line-height: 36px;
+		font-size: 48px;
+		margin: 0;
+		padding: 0;
+	}
+	h1 {
+		background: blue;
+		width: 1200px;
+		text-overflow: wrap;
+	}
+	</style>
+
+	<script>
+	var $fill;
+	var doTri = true;
+
+	function go() {
+		$fill = document.getElementById("fill");
+		var toFill = "";
+		var t;
+		for (var i = 0; i<1000; i++) {
+			if (doTri) {
+				toFill += pickRandom();
+			} else {
+				toFill += (Math.random()*2 < 1) ? "&#65340;" : "&#65295;" ;
+			}
+			if (i%30==29) toFill += "\n";
+		}	
+		$fill.innerHTML = toFill;
+	}
+	function pickRandom() {
+		var toReturn = "";
+		toReturn += "&#"+Math.floor( Math.random()*4 + 9698);+";";	
+		return toReturn;
+	}
+	</script>
+</head>
+<body onload="go();">
+<h1 id="fill">&#65340;&#65295;</h1>
+</body>
+</html>
