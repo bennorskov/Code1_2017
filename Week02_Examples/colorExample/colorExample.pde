@@ -10,7 +10,7 @@ point(140, 140); // red pixel, bigger
 noFill();
 rect(23,23,130,23); //unfilled rectangle
 
-fill(#ff00ff); //this is exactly the same
+fill(#ff00ff); //this is exactly the same...
 fill(255, 0, 255); // as this. Use which one you like better
 ellipse(100, 100, 45, 150);
 
