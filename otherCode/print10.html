@@ -19,19 +19,29 @@
 
 	<script>
 	var $fill;
-	var doTri = true;
+	var whichToPick = 2;
 
 	function go() {
 		$fill = document.getElementById("fill");
 		var toFill = "";
-		var t;
+		var letterCount = 0;
 		for (var i = 0; i<1000; i++) {
-			if (doTri) {
-				toFill += pickRandom();
-			} else {
-				toFill += (Math.random()*2 < 1) ? "&#65340;" : "&#65295;" ;
+			if (whichToPick == 0) {
+				toFill += pickRandom(); //this picks a triangle
+				if (i%33==32) toFill += "\n"; //this adds a new line because triangles don't wrap?
+			} else if (whichToPick == 1) {
+				toFill += (Math.random()*2 < 1) ? "&#65340;" : "&#65295;" ; //slash forward or backwards 
+			} else if (whichToPick ==2 ) {
+				var shapeCount = pickRandomSequence(); //this picks a triangle
+				toFill += shapeCount.shape;
+				letterCount += shapeCount.count;
+				if (letterCount > 31) {
+					 toFill += "\n"; 
+					 letterCount = 0;
+				}
+
+				//this adds a new line because triangles don't wrap?
 			}
-			if (i%30==29) toFill += "\n";
 		}	
 		$fill.innerHTML = toFill;
 	}
@@ -39,6 +49,38 @@
 		var toReturn = "";
 		toReturn += "&#"+Math.floor( Math.random()*4 + 9698);+";";	
 		return toReturn;
+	}
+	function pickRandomSequence() {
+		var toReturn = {shape: "", count: 0};
+		switch(Math.floor(Math.random()*5)) {
+			case 0:
+				toReturn.shape += "&#"+Math.floor(Math.random()*4 + 9698) + ";";
+				toReturn.count = 1;
+				break;
+			case 1: 
+				toReturn.shape += "&#"+ 9701 + ";";
+				toReturn.shape += "&#"+ 9699 + ";";
+				toReturn.count = 2;
+				break;
+			case 2: 
+				toReturn.shape += "&#"+ 9698 + ";";
+				toReturn.shape += "&#"+ 9700 + ";";
+				toReturn.count = 2;
+				
+				break;
+			case 3: 
+				toReturn.shape += "&#"+ 9698 + ";";
+				toReturn.shape += "&#"+ 9699 + ";";
+				toReturn.count = 2;
+				break;
+			case 4: 
+				toReturn.shape += "&#"+ 9701 + ";";
+				toReturn.shape += "&#"+ 9700 + ";";
+				toReturn.count = 2;
+				break;
+		}
+		return toReturn;
+
 	}
 	</script>
 </head>
