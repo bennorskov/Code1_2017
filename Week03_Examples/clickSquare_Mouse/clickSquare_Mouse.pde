@@ -16,12 +16,10 @@ void draw() {
   }
 }
 void mouseClicked() {
-  println("howdy");
   if (drawASquare == true) {
     drawASquare = false;
   } else if (drawASquare == false) {
     drawASquare = true;
   }
-  
   // drawASquare = !drawASquare; // same as five lines above
 }
