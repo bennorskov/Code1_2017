@@ -18,9 +18,11 @@ void draw() {
   rect(rX, rY, rW, rH);
 }
 void mouseClicked() {
-  if (useRed ==true) {
-    useRed = false;
-  } else {
-    useRed = true;
-  }
+  //if (useRed == true) {
+  //  useRed = false;
+  //} else {
+  //  useRed = true;
+  //}
+  useRed = !useRed; //this is exactly the same as the five lines above
+  //if it seems like crazy talk, then just do the five lines above
 }
