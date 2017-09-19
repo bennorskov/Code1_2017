@@ -5,7 +5,8 @@ void setup() {
 
 void draw() {
   background(200);
-  if (isClicked) {
+  //if (isClicked == false) {
+  if (!isClicked) { //this line is the same as above
     background(0, 0, 255);
   }
 }
