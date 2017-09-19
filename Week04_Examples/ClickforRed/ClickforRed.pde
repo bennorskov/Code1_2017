@@ -10,7 +10,7 @@ void setup() {
 }
 void draw() {
   background(200);
-  if (useRed == true) {
+  if (useRed) {
     fill(255, 0, 0);
   } else {
     fill(255);

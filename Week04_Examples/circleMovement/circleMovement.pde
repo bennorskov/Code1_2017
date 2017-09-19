@@ -6,6 +6,7 @@ float elXSpeed = 2;
 float elYSpeed = 2;
 
 float lineY = 300;
+float lineX = 350;
 
 void setup() {
   size(500, 400);
@@ -14,12 +15,14 @@ void setup() {
 void draw() {
   background(200);
   elX += elXSpeed;
-  elY += elYSpeed;
+  //elY += elYSpeed;
+  elY = elY + elYSpeed;
   ellipse(elX, elY, elDiameter, elDiameter);
-  
+
   if (elY > lineY) {
     // move up if you go passed the line
     elYSpeed = elYSpeed * -1;
   }
   line(0, lineY, width, lineY);
+  line(lineX, 0, lineX, height);
 }
