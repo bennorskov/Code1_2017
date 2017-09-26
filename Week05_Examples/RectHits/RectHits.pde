@@ -12,21 +12,31 @@ float elYSpeed = 4;
 void setup() {
   size(600, 300);
   noStroke();
+  frameRate(50);
 }
 
 void draw() {
   background(200);
   elX += elXSpeed;
   elY += elYSpeed;
- 
+
   // rect collision detection
-  if ((elX > rectX - elW/2) && (elY > rectY - elW/2) && (elY < rectY + rectH + elW/2) && (elX < rectX + rectW + elW/2)) {
-    if ((elX < rectX) || (elX > rectX + rectW)) {
+  if ((elX > rectX - elW/2) && (elY > rectY - elW/2) && 
+      (elY < rectY + rectH + elW/2) && (elX < rectX + rectW + elW/2)
+  ) {
+    if (elX < rectX){
       // if on the sides, change x Speed
       elXSpeed *= -1;
-    } else {
-      //if not on the sides, you must be on the top or bottom, so change Y speed
+      elX = rectX - elW/2;
+    } else if(elX > rectX + rectW) {
+      elXSpeed *= -1;
+      elX = rectX + rectW + elW/2;
+    } else if (elY < rectY) {
       elYSpeed *= -1;
+      elY = rectY - elW/2;
+    } else {
+      elYSpeed *= -1;
+      elY = rectY + rectH + elW/2;
     }
   } 
 
@@ -41,7 +51,7 @@ void draw() {
   //draw everything:
   fill(#f032a8);
   rect(rectX, rectY, rectW, rectH);
-  
+
   fill(#0032a8);
   ellipse(elX, elY, elW, elW);
 }
