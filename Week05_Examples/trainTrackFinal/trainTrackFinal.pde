@@ -1,9 +1,8 @@
 // traintracks
-
-int numTracks = 20;
+int numTracks = 15;
 float trackX = 40;
 float[] trackY = new float[numTracks];
-float trackSpeed = 2.3;
+float trackSpeed = 2;
 
 void setup() {
   size(80, 400);

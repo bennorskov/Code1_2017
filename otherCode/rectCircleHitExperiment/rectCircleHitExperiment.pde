@@ -91,7 +91,7 @@ void rectMove() {
   rectXSpeed = sin(millis() * .005) * 2 + 2;
 
   if (rectX > width) {
-    rectX = -rectW +1;
+    rectX = -rectW;
   }
 }
 
