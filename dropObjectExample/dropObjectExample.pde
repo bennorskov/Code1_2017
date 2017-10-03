@@ -1,25 +1,27 @@
 Drop myDrop = new Drop();
+Drop a = new Drop();
+
+Drop[] allthedrops = new Drop[100];
+// initialize the Array for drops, but not the drops themselves. 
 
 void setup () {
-  size( 400, 600);
-  myDrop.xPosition = random(width);
-  myDrop.yPosition = random(height);
+  size(400, 600);
   noStroke();
+  for (int i=0; i<allthedrops.length; i++) {
+    //must initialize the drops
+    allthedrops[i] = new Drop();
+  }
 }
 void draw() {
   background(100);
-  fill(100, 100, 255);
-  triangle(myDrop.xPosition-myDrop.dropWidth/2, myDrop.yPosition, 
-            myDrop.xPosition+myDrop.dropWidth/2, myDrop.yPosition, 
-            myDrop.xPosition, myDrop.yPosition-myDrop.dropWidth);
-    ellipse(myDrop.xPosition, myDrop.yPosition, myDrop.dropWidth, myDrop.dropWidth);
-    
-    myDrop.yPosition += myDrop.ySpeed;
-    
-    if (myDrop.yPosition > height) {
-      //reset at top
-      myDrop.yPosition = 0;
-      myDrop.xPosition = random(width);
-      myDrop.ySpeed = random(5, 10);
-    }
+  
+  for (int i=0; i<allthedrops.length; i++) {
+    allthedrops[i].display();
+    allthedrops[i].move();
+  }
+  
+  a.display();
+  a.move();
+  myDrop.display();
+  myDrop.move();
 }
