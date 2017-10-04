@@ -4,6 +4,8 @@ float[] dropYPosition = new float[numDrops];
 float[] dropYSpeed = new float[numDrops];
 float dropWidth = 20;
 
+
+
 void setup() {
   size(400, 600);
   for (int dropIndex = 0; dropIndex < numDrops; dropIndex++) {
