@@ -6,13 +6,13 @@ class Drop {
   color displayColor;
 
   Drop() {
-    xPosition = random(width);
+    xPosition = random(0, width);
     yPosition = random(height);
-    ySpeed = random(5, 10);
-    if (random(2) > 1) {
-      displayColor = color(100, 100, 255);
+    ySpeed = random(5, 15);
+    if (random(0, 2) > 1) {
+      displayColor = color(100, 100, 255, 200);
     } else {
-      displayColor = color(100, 100, 255, 127);
+      displayColor = color(100, 100, 255, 100);
     }
   }
   void display() {

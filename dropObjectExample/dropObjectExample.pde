@@ -1,7 +1,7 @@
 Drop myDrop = new Drop();
 Drop a = new Drop();
 
-Drop[] allthedrops = new Drop[100];
+Drop[] allthedrops = new Drop[500];
 // initialize the Array for drops, but not the drops themselves. 
 
 void setup () {
@@ -11,6 +11,7 @@ void setup () {
     //must initialize the drops
     allthedrops[i] = new Drop();
   }
+  smooth();
 }
 void draw() {
   background(100);
