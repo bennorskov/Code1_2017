@@ -6,11 +6,11 @@ void draw() {
   drawFace(100, 100);
 }
 
-void drawFace(float x, float y) {
+void drawFace(float _x, float _y) {
   fill(#E3CF32);
-  ellipse(x, y, 190, 190);
-  drawEyes(x, y);
-  drawMouth(x, y);
+  ellipse(_x, _y, 190, 190);
+  drawEyes(_x, _y);
+  drawMouth(_x, _y);
 }
 
 void drawEyes(float x, float y) {
