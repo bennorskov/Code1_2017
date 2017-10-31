@@ -11,7 +11,6 @@ void draw() {
   if (frameCount < 200) {
     //only draw 200 times. You can also just press the stop button
     //you can't see what's happening on screen, so you'll have to figure out when to exit 
-    loops++;
     ellipse(random(width), random(height), 20, 20);
   } else {
     exit(); //this will close the program
