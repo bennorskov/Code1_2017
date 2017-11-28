@@ -7,8 +7,6 @@ class Orb {
 
   float floatOffset = 20;
   float originalY;
-  float easing = .1;
-  float colorPosition = 0;
 
   float heightD = 40;
   float squishAmount = 30;
@@ -16,6 +14,7 @@ class Orb {
 
   color drawColor = color(100, 100, 150);
   color activeColor = color(200, 100, 150);
+  
   Orb(float x, float y) {
     pos = new PVector(x, y);
     originalY = pos.y;
@@ -23,15 +22,13 @@ class Orb {
   void update() {
     color currentColor; 
     if (isFloating) {
-      colorPosition += (1-colorPosition) * easing;
-      currentColor = lerpColor(drawColor, activeColor, colorPosition);
-      pos.y += ((originalY - floatOffset) - pos.y) * easing;
-      heightD += (squishAmount - heightD) * easing;
+      currentColor = activeColor;
+      pos.y = originalY - floatOffset;
+      heightD = squishAmount;
     } else {
-      colorPosition += (0-colorPosition) * easing;
-      currentColor = lerpColor(drawColor, activeColor, colorPosition);
-      pos.y += (originalY - pos.y) * easing;
-      heightD += (widthD - heightD) * easing;
+      currentColor = drawColor;
+      pos.y = originalY;
+      heightD = widthD;
     }
     fill(currentColor);
     ellipse(pos.x, pos.y, widthD, heightD);

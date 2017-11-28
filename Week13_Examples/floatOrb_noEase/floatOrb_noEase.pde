@@ -1,8 +1,7 @@
-
 ArrayList<Orb> orbs = new ArrayList<Orb>();
-
+// Orb[] someOrbs = new Orb[20];
 void setup() {
-  size(450, 400);
+  size(1450, 600);
   noStroke();
   smooth();
   int margin = 40;
@@ -11,8 +10,7 @@ void setup() {
       Orb o = new Orb(x, y);
       orbs.add(o);
     }
-  }
-  
+  } 
 }
 void draw() {
   background(240, 240, 255);
