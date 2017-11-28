@@ -21,7 +21,7 @@ class Orb {
   }
   void update() {
     color currentColor; 
-    if (isFloating) {
+    if (isFloating == true) {
       currentColor = activeColor;
       pos.y = originalY - floatOffset;
       heightD = squishAmount;

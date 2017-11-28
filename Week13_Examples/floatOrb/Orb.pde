@@ -3,7 +3,7 @@ class Orb {
 
   boolean isFloating = false;
   int startFloatTime = 0;
-  int floatDuration = 1500;
+  int floatDuration = 4500;
 
   float floatOffset = 20;
   float originalY;
@@ -15,7 +15,7 @@ class Orb {
   float widthD = 40;
 
   color drawColor = color(100, 100, 150);
-  color activeColor = color(200, 100, 150);
+  color activeColor = color(250, 100, 150);
   Orb(float x, float y) {
     pos = new PVector(x, y);
     originalY = pos.y;

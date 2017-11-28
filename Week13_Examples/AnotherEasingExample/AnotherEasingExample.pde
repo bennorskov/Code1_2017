@@ -18,4 +18,10 @@ void draw() {
   float distanceLeft = whereYoureGoing - whereYouAre;
   float percentageDist = distanceLeft * easeAmount;
   whereYouAre += percentageDist;
+  
+  //in one line it looks like this:
+  //whereYouAre = whereYouAre + (whereYoureGoing - whereYouAre) * easeAmount;
+}
+void mouseClicked() {
+  whereYouAre = 0;
 }
