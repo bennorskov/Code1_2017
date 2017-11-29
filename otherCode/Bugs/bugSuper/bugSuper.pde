@@ -14,8 +14,9 @@ Demonbug d;
 XiaBug xb;
 Food jFood;
 
-ArrayList<Poop> poops = new ArrayList();
+PImage bg;
 
+ArrayList<Poop> poops = new ArrayList();
 boolean[] keys = new boolean[255];
 
 void setup() {
@@ -33,9 +34,12 @@ void setup() {
   d = new Demonbug();
   xb = new XiaBug();
   jFood = new Food();
+  bg = loadImage("forest.jpg");
 }
 void draw() {
-  background(100);
+  background(200);
+  tint(255, 100);
+  image(bg, 0, 0);
   //chella
   f.display();
   f.move();
@@ -102,7 +106,6 @@ void draw() {
 void keyPressed() {
   int keyNumber = (key == CODED) ? keyCode : key;
   keys[keyNumber] = true;
-  //println(keys['w'], "other w", int('w'), keyCode, int(key));
 }
 
 void keyReleased() {

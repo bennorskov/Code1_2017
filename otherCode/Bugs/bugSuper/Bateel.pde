@@ -45,7 +45,7 @@ class Bateel {
     countUpY -= random(.09, .05);
   }
   void move(boolean[] allTheKeys) {
-    if (allTheKeys[' ']){
+    if (allTheKeys[' ']) {
       xPosition += ySpeed;
     }
 
@@ -64,6 +64,5 @@ class Bateel {
       yPosition = random(width);
       ySpeed = random(3, 6);
     }
-
   }
 }
