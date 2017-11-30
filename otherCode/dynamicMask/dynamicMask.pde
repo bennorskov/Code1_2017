@@ -24,4 +24,5 @@ void draw() {
   turt.mask(maskGraphics); // apply the mask
   
   image(turt, 0, 0);
+  //image(maskGraphics, 0, 0); // comment this line back in to see the mask instead of the image
 }
