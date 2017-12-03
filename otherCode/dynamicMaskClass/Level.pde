@@ -40,6 +40,7 @@ class Level {
 
   void renderWave() {
     fill(102, 82, 40);
+    noStroke();
     for (int i = 0; i < yValues.length; i++) {
       ellipse(i*xspacing, height/3+yValues[i], 15, 15);
     }
